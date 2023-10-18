@@ -5,7 +5,8 @@ const mongoDBURL = 'mongodb+srv://juliannorris96:0bCSe8IN3KzTa7Fk@monvieuxgrimoi
 
 const app = express();
 
-const bookRoutes = require('./routes/book')
+const bookRoutes = require('./routes/book');
+const userRoutes = require('./routes/user');
 
 app.use(express.json());
 
@@ -30,6 +31,6 @@ app.use((req, res, next) => {
 });
 
 app.use('/api/books', bookRoutes);
-
+app.use('/api/auth', userRoutes);
 
 module.exports = app;
